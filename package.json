@@ -15,7 +15,7 @@
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
     "generate": "ng generate",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build"
   },
   "dependencies": {
     "@angular/animations": "^6.1.6",

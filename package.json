@@ -39,7 +39,9 @@
     "@angular/cli": "~6.1.5",
     "@types/node": "^8.10.13",
     "@types/jasmine": "^2.8.7",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "express": "^4.16.3",
+
 
   },
   "devDependencies": {

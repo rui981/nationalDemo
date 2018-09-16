@@ -1,0 +1,57 @@
+{
+  "configVersion": 1,
+  "index": "https://rui981.github.io/nationalex/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://rui981.github.io/nationalex/favicon.ico",
+        "https://rui981.github.io/nationalex/index.html",
+        "https://rui981.github.io/nationalex/main.eed835384f2a48e56809.js",
+        "https://rui981.github.io/nationalex/polyfills.250ef2a4b02c50c382fe.js",
+        "https://rui981.github.io/nationalex/runtime.a66f828dca56eeb90e02.js",
+        "https://rui981.github.io/nationalex/styles.4d14d11969d7c71d9caa.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://rui981.github.io/nationalex/assets/ngx-rocket-logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://rui981.github.io/nationalex/assets/ngx-rocket-logo.png": "0ac53fd27406fe5a36e68285315fb0012e54058e",
+    "https://rui981.github.io/nationalex/favicon.ico": "b65083d46bbf63692d5d2cdd69622e6d7ecae317",
+    "https://rui981.github.io/nationalex/index.html": "7eac04d43f838cb7efd7a98421876fc4c4255b0a",
+    "https://rui981.github.io/nationalex/main.eed835384f2a48e56809.js": "f19a2764dca6cb8b0de9a154279c9af63a7dbaec",
+    "https://rui981.github.io/nationalex/polyfills.250ef2a4b02c50c382fe.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
+    "https://rui981.github.io/nationalex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "https://rui981.github.io/nationalex/styles.4d14d11969d7c71d9caa.css": "2180897b413dddc5afbf870fe4d978ec664cee55"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

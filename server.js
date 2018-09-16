@@ -6,11 +6,11 @@ let server = require('http').Server(app);
 
 const port = process.env.PORT || 8000;
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/NationalExpress'));
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/NationalExpress/index.html'));
+res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 // Start the app by listening on the default Heroku port

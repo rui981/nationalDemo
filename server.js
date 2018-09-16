@@ -1,8 +1,9 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-let server = require('http').Server(app);
 const app = express();
+let server = require('http').Server(app);
+
 const port = process.env.PORT || 8000;
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/NationalExpress'));

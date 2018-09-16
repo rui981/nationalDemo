@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="form">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>
+          Search
+          <input id="searchBox" type="text" formControlName="searchText">
+          <button class="btn-blue" (click)="searchClick()">Search</button>
+          <div class="text-danger" *ngIf="validControls()">required, minimum 3 characters</div>
+        </label>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons"  >
+        <label class="btn btn-secondary" [ngClass]="!tv ?'active':''">
+          <input type="radio" name="options" id="option1" autocomplete="off"  (click)="toggleType(1)" > Movies
+        </label>
+        <label class="btn btn-secondary" [ngClass]="tv ?'active':''">
+          <input type="radio" name="options" id="option2" autocomplete="off"  (click)="toggleType(2)" > Tv shows
+        </label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <ngb-pagination (pageChange)="pagination($event)" [collectionSize]="maxNumberOfPages" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <ul *ngFor=" let movie of blob.results" style="max-width:200px;">
+      <a routerLink="/detailview/{{type}}/{{movie.id}}" routerLinkActive="active">
+        <div class="col-md-4 col-sm-6 col-12">
+       <img class="logo" [src]='"http://image.tmdb.org/t/p/w185/"+movie.poster_path' alt="angular logo"
+            onError="this.src='http://image.tmdb.org/t/p/w185//adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'">
+<span style="white-space: nowrap; display: block; word-break: break-all; word-wrap: break-word;">  {{movie.title}}</span>
+
+      </div>
+      </a>
+    </ul>
+  </div>
+</div>

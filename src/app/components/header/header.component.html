@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
+            aria-label="Toggle navigation" (click)="toggleMenu()" [attr.aria-expanded]="!menuHidden">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link text-uppercase" routerLink="/search" routerLinkActive="active">
+          <i class="fas fa-home"></i>
+          <span translate>Home</span>
+        </a>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <h1 class="navbar-brand" translate>APP_NAME</h1>
+      </div>
+      </div>
+
+  </nav>
+</header>

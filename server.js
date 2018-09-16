@@ -7,7 +7,7 @@ let server = require('http').Server(app);
 const port = process.env.PORT || 8000;
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist'));
-
+app.enable('trust proxy');
 app.get('/*', function(req,res) {
     
 res.sendFile(path.join(__dirname+'/dist/index.html'));

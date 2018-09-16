@@ -35,8 +35,8 @@
     <ul *ngFor=" let movie of blob.results" style="max-width:200px;">
       <a routerLink="/detailview/{{type}}/{{movie.id}}" routerLinkActive="active">
         <div class="col-md-4 col-sm-6 col-12">
-       <img class="logo" [src]='"http://image.tmdb.org/t/p/w185/"+movie.poster_path' alt="angular logo"
-            onError="this.src='http://image.tmdb.org/t/p/w185//adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'">
+       <img class="logo" [src]='"https://image.tmdb.org/t/p/w185/"+movie.poster_path' alt="angular logo"
+            onError="this.src='https://image.tmdb.org/t/p/w185//adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'">
 <span style="white-space: nowrap; display: block; word-break: break-all; word-wrap: break-word;">  {{movie.title}}</span>
 
       </div>

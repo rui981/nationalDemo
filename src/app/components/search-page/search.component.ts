@@ -33,6 +33,7 @@ searchClick() {
     }
 }
 pagination(page: number) {
+    console.log(page)
   this.page = page;
   const crit = this.form.controls['searchText'].value;
   if (crit === '') {

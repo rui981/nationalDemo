@@ -16,9 +16,9 @@ export class MovieDBService {
   constructor( private http: HttpClient, private i18nService: I18nService) {  }
 
 
-  getSearch (type: string): Promise<any> {
+  getSearch (type: string, page: number): Promise<any> {
     return this.http
-      .get<any[]>(this.URL1 + type +   this.URL2 )
+      .get<any[]>(this.URL1 + type +   this.URL2 + '&page=' + page )
       .toPromise();
 
   }

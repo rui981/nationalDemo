@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {MovieDBService} from '@app/services/movie-db.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
@@ -23,7 +23,7 @@ tv: boolean;
     });
    this.tv = false;
    this.type = 'movie';
-    this.search(this.type);
+    this.search(this.type, 1);
   }
 searchClick() {
     if (this.form.controls['searchText'].valid) {
@@ -33,12 +33,18 @@ searchClick() {
     }
 }
 pagination(page: number) {
+  this.page = page;
   const crit = this.form.controls['searchText'].value;
-  this.searchWithParameters(crit, this.type, page);
+  if (crit === '') {
+    this.search(this.type, page);
+  } else {
+    this.searchWithParameters(crit, this.type, page);
+}
 }
 
-  search(type: string) {
-    this.searchService.getSearch( type ).then(res =>  {this.blob = res; this.maxNumberOfPages = res.total_pages; } );
+  search(type: string, page: number ) {
+    this.searchService.getSearch( type, page )
+      .then(res =>  {this.blob = res; this.maxNumberOfPages = res.total_pages; } );
 
   }
   searchWithParameters(criteria: string, type: string, pageNumber: number) {
@@ -56,7 +62,7 @@ pagination(page: number) {
       this.type = 'movie';
     }
     if (this.form.controls['searchText'].value === '') {
-      this.search(this.type);
+      this.search(this.type, 1);
     }
 }
 

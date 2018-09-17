@@ -25,9 +25,9 @@ export class MovieDBService {
 
   getSearchWithParameters(criteria: string, type: string, pageNumber: number): Promise<any> {
     return this.http
-      .get<any[]>(this.URL1 +
+      .get<any[]>(this.URLFIND1 + 'search/' +
         type +
-        this.URL2 +
+        this.URLFIND2 + '&query=' +
         criteria +
         '&page=' +
         pageNumber +

@@ -14,6 +14,7 @@ export class DetailsComponent implements OnInit {
   id: number;
   filledStars: Array<number>;
   greyStars: Array<number>;
+  seasonOverview: Array<number>;
   type: string;
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -30,9 +31,18 @@ export class DetailsComponent implements OnInit {
            const starNumber = Math.round(res.vote_average);
            this.filledStars  = Array(starNumber).fill(0).map((x, i ) => i);
            this.greyStars  = Array(10 - starNumber ).fill(0).map((x, i ) => i);
+           this.seasonOverview = Array(res.number_of_seasons).fill(0).map((x, i ) => i);
          } );
     });
 
 
+  }
+
+  toggleIndex(index: number) {
+    if (this.seasonOverview[index] === 0) {
+      this.seasonOverview[index] = 1;
+    } else {
+      this.seasonOverview[index] = 0;
+    }
   }
 }

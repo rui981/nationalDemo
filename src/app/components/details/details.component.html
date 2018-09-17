@@ -8,7 +8,7 @@
        onError="this.src='https://image.tmdb.org/t/p/w185//adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'">
     </div>
     <div class="col-4">
-      <h4>Genres</h4>
+      <h4 *ngIf="blob.genres != null">Genres</h4>
       <ul *ngFor=" let genre of blob.genres">
         <span>{{genre.name}}</span>
       </ul>
@@ -41,12 +41,12 @@
 
 <div *ngIf="type==='tv'" >
   <div class="row">
-    <ul *ngFor="let season of blob.seasons" >
-   <div class="col-12">
+    <ul *ngFor="let season of blob.seasons; let i= index" (click)="toggleIndex(i)"  >
+   <div class="col-12" >
 
     <strong>{{season.name}}</strong>
-     <strong>{{season.air_date}}</strong>
-     <div>{{season.overview}}</div>
+     <strong>{{season.air_date}} >></strong>
+     <div *ngIf="seasonOverview[i]===1">{{season.overview}}</div>
 
     </div>
     </ul>

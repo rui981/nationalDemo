@@ -23,7 +23,7 @@ tv: boolean;
     });
    this.tv = false;
    this.type = 'movie';
-    this.search();
+    this.search(this.type);
   }
 searchClick() {
     if (this.form.controls['searchText'].valid) {
@@ -37,8 +37,8 @@ pagination(page: number) {
   this.searchWithParameters(crit, this.type, page);
 }
 
-  search() {
-    this.searchService.getSearch().then(res =>  {this.blob = res; this.maxNumberOfPages = res.total_pages; } );
+  search(type: string) {
+    this.searchService.getSearch( type ).then(res =>  {this.blob = res; this.maxNumberOfPages = res.total_pages; } );
 
   }
   searchWithParameters(criteria: string, type: string, pageNumber: number) {
@@ -55,7 +55,9 @@ pagination(page: number) {
       this.tv = false;
       this.type = 'movie';
     }
-    console.log(this.type);
+    if (this.form.controls['searchText'].value === '') {
+      this.search(this.type);
+    }
 }
 
 validControls(): boolean {

@@ -32,15 +32,17 @@
 
 <div class="container">
   <div class="row">
-    <ul *ngFor=" let movie of blob.results" style="max-width:200px;">
-      <a routerLink="/detailview/{{type}}/{{movie.id}}" routerLinkActive="active">
-        <div class="col-md-4 col-sm-6 col-12">
-       <img class="logo" [src]='"https://image.tmdb.org/t/p/w185/"+movie.poster_path' alt="angular logo"
+    <div *ngFor=" let movie of blob.results" style="max-width:200px;">
+      <span class="col-4" style="max-height: 400px;">
+      <a style="text-decoration: none;" routerLink="/detailview/{{type}}/{{movie.id}}" routerLinkActive="active">
+        <img class="logo" [src]='"https://image.tmdb.org/t/p/w185/"+movie.poster_path' alt="angular logo"
             onError="this.src='https://image.tmdb.org/t/p/w185//adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'">
-<span style="white-space: nowrap; display: block; word-break: break-all; word-wrap: break-word;">  {{movie.title}}</span>
+        <div class="ml-md-4">  {{movie.title}}</div>
+         <div class="ml-md-4">  {{movie.name}}</div>
 
-      </div>
       </a>
-    </ul>
+      </span>
+    </div>
+
   </div>
 </div>

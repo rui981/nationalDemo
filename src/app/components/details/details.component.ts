@@ -25,9 +25,11 @@ export class DetailsComponent implements OnInit {
      this.route.params.subscribe(params => {
       this.id = +params['id'];
       this.type = params['type'];
-       this.service.getDetails(this.id, this.type)
+      this.type = this.type === 'tvshows' ? 'tv' : 'movie';
+        this.service.getDetails(this.id, this.type)
          .then(res => {
            this.blob = res;
+           console.log(res)
            const starNumber = Math.round(res.vote_average);
            this.filledStars  = Array(starNumber).fill(0).map((x, i ) => i);
            this.greyStars  = Array(10 - starNumber ).fill(0).map((x, i ) => i);

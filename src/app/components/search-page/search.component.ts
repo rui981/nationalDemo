@@ -22,7 +22,7 @@ tv: boolean;
         Validators.minLength(3)]),
     });
    this.tv = false;
-   this.type = 'movie';
+   this.type = 'movies';
     this.search(this.type, 1);
   }
 searchClick() {
@@ -56,11 +56,11 @@ pagination(page: number) {
   toggleType(type: number) {
     if (type === 2) {
       this.tv = true;
-      this.type = 'tv';
+      this.type = 'tvshows';
     }
     if (type === 1) {
       this.tv = false;
-      this.type = 'movie';
+      this.type = 'movies';
     }
     if (this.form.controls['searchText'].value === '') {
       this.search(this.type, 1);

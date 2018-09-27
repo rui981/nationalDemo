@@ -47,4 +47,15 @@ export class DetailsComponent implements OnInit {
       this.seasonOverview[index] = 0;
     }
   }
+
+  redirect(requestToken: string) {
+    this.router.navigateByUrl('https://www.themoviedb.org/authenticate/' + requestToken
+      + '?redirect_to=' + 'localhost:8080/detailview/' + this.type + '/' + this.id );
+  }
+
+  vote() {
+    let rToken: any;
+    this.service.getRequestToken().then(res => rToken = res['request_token']);
+    this.redirect(rToken);
+  }
 }

@@ -8,12 +8,9 @@ import {I18nService} from '@app/core';
   providedIn: 'root'
 })
 export class MovieDBService {
-  URL = 'https://damp-island-67326.herokuapp.com/';
+ // URL = 'https://damp-island-67326.herokuapp.com/';
+  URL = 'localhost:8080';
 
-  URL1 = 'https://api.themoviedb.org/3/trending/'
-  URL2 = '/week?api_key=b51f316aae8c57c38fa870244f77731f';
-  URLFIND1 = 'https://api.themoviedb.org/3/'
-  URLFIND2 = '?language=' + this.i18nService.language + '&api_key=b51f316aae8c57c38fa870244f77731f'
 
   constructor( private http: HttpClient, private i18nService: I18nService) {  }
 
@@ -38,4 +35,14 @@ export class MovieDBService {
       .toPromise();
 
   }
+
+  getRequestToken() {
+    return this.http.get<any[]>(this.URL + 'auth/rToken' ).toPromise();
+  }
+
+  getSessionDetails( requestToken: string) {
+    return this.http.get<any[]>(this.URL + 'auth/sessionid/' + requestToken ).toPromise();
+  }
+
+
 }

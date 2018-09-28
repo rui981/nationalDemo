@@ -8,8 +8,8 @@ import {I18nService} from '@app/core';
   providedIn: 'root'
 })
 export class MovieDBService {
- // URL = 'https://damp-island-67326.herokuapp.com/';
-  URL = 'localhost:8080';
+  URL = 'https://damp-island-67326.herokuapp.com/';
+ // URL = 'localhost:8080';
 
 
   constructor( private http: HttpClient, private i18nService: I18nService) {  }
